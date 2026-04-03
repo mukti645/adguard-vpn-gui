@@ -1,0 +1,16 @@
+[package]
+name = "adguard-vpn-gui"
+version = "1.0.0"
+edition = "2021"
+authors = ["AdGuard VPN GUI Contributors"]
+description = "A GUI wrapper for adguardvpn-cli on Linux, built with Rust and iced"
+license = "MIT"
+
+[dependencies]
+iced = { version = "0.14", features = ["tokio"] }
+tokio = { version = "1", features = ["process", "time", "rt-multi-thread", "macros"] }
+regex = "1"
+
+[profile.release]
+opt-level = 2
+lto = "thin"
